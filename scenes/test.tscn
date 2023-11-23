@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm8bwul8xtci2"]
+
+[ext_resource type="PackedScene" uid="uid://dt4woj5chmts6" path="res://scenes/player.tscn" id="1_n1j10"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1v7i2"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ub2jq"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4n8di"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.779436, 0.626481, 0, -0.626481, 0.779436, 0, 8.50454, 0)
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_1v7i2")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ub2jq")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03673, 3.00986)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/CSGBox3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/CSGBox3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_4n8di")
+
+[node name="Player" parent="." instance=ExtResource("1_n1j10")]
