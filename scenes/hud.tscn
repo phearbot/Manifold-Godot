@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct2771nprvfdu"]
+
+[ext_resource type="Texture2D" uid="uid://7d8it0pk8klf" path="res://graphics/WhiteCircle.png" id="1_mpsm4"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="cursor" type="Sprite2D" parent="."]
+position = Vector2(1280, 720)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_mpsm4")

@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dm8bwul8xtci2"]
+[gd_scene load_steps=6 format=3 uid="uid://dm8bwul8xtci2"]
 
+[ext_resource type="PackedScene" uid="uid://jrojf4sok1ac" path="res://scenes/test-cube.tscn" id="1_adi2o"]
 [ext_resource type="PackedScene" uid="uid://dt4woj5chmts6" path="res://scenes/player.tscn" id="1_n1j10"]
+[ext_resource type="PackedScene" uid="uid://ct2771nprvfdu" path="res://scenes/hud.tscn" id="3_1xte5"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1v7i2"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ub2jq"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4n8di"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -26,12 +26,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ub2jq")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03673, 3.00986)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Environment/CSGBox3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/CSGBox3D/StaticBody3D"]
-shape = SubResource("BoxShape3D_4n8di")
+[node name="test-cube" parent="Environment" instance=ExtResource("1_adi2o")]
 
 [node name="Player" parent="." instance=ExtResource("1_n1j10")]
+
+[node name="HUD" parent="." instance=ExtResource("3_1xte5")]
