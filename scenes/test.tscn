@@ -29,5 +29,7 @@ shape = SubResource("ConcavePolygonShape3D_ub2jq")
 [node name="test-cube" parent="Environment" instance=ExtResource("1_adi2o")]
 
 [node name="Player" parent="." instance=ExtResource("1_n1j10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 3, 2.08165e-12)
+up_direction = Vector3(2.08165e-12, 1, 2.08165e-12)
 
 [node name="HUD" parent="." instance=ExtResource("3_1xte5")]
