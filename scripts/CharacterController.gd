@@ -105,8 +105,10 @@ func _process(delta):
 	var collision = space.intersect_ray(query)
 	if collision:
 		target_normal = collision.normal
+		$"../HUD".update_reticle_color(target_normal)
 	else:
 		target_normal = null
+		$"../HUD".update_reticle_color(Vector3.ZERO)
 
 
 # Finds the rotation axis (Perpendicular to the current y (up) and the proposed y)

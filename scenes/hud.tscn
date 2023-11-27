@@ -1,10 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://ct2771nprvfdu"]
+[gd_scene load_steps=5 format=3 uid="uid://ct2771nprvfdu"]
 
-[ext_resource type="Texture2D" uid="uid://7d8it0pk8klf" path="res://graphics/WhiteCircle.png" id="1_mpsm4"]
+[ext_resource type="Shader" uid="uid://cgg412jb7cf0g" path="res://graphics/shaders and materials/reticle.tres" id="1_5n4wl"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_7t0rx"]
+[ext_resource type="Texture2D" uid="uid://7d8it0pk8klf" path="res://graphics/sprites/WhiteCircle.png" id="3_yj0ur"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jnh47"]
+shader = ExtResource("1_5n4wl")
+shader_parameter/reticle_color = Color(1, 1, 1, 1)
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_7t0rx")
 
 [node name="Reticle" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_jnh47")
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -20,4 +28,4 @@ scale = Vector2(0.1, 0.1)
 pivot_offset = Vector2(100, 100)
 size_flags_horizontal = 4
 size_flags_vertical = 8
-texture = ExtResource("1_mpsm4")
+texture = ExtResource("3_yj0ur")

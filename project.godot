@@ -13,7 +13,7 @@ config_version=5
 config/name="Manifold-Godot"
 run/main_scene="res://scenes/test.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://graphics/icon.svg"
+config/icon="res://graphics/sprites/icon.svg"
 
 [display]
 

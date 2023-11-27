@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bccnyjtoat5o0"
-path="res://.godot/imported/HexagonDouble.png-117ec274eb80ce1aa0d07771d3514acb.ctex"
+uid="uid://7d8it0pk8klf"
+path="res://.godot/imported/WhiteCircle.png-22540a6ea9aca92643cb928d5746b8bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/HexagonDouble.png"
-dest_files=["res://.godot/imported/HexagonDouble.png-117ec274eb80ce1aa0d07771d3514acb.ctex"]
+source_file="res://graphics/sprites/WhiteCircle.png"
+dest_files=["res://.godot/imported/WhiteCircle.png-22540a6ea9aca92643cb928d5746b8bf.ctex"]
 
 [params]
 

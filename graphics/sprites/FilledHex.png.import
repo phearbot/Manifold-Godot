@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx24jwa5q5tgw"
-path="res://.godot/imported/SquareOutline.png-db4b146b852d8e45296506d9ec81f75d.ctex"
+uid="uid://cmevtv6ctwefb"
+path="res://.godot/imported/FilledHex.png-fce71e8a3dc21029bb85af7996caaf2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/SquareOutline.png"
-dest_files=["res://.godot/imported/SquareOutline.png-db4b146b852d8e45296506d9ec81f75d.ctex"]
+source_file="res://graphics/sprites/FilledHex.png"
+dest_files=["res://.godot/imported/FilledHex.png-fce71e8a3dc21029bb85af7996caaf2e.ctex"]
 
 [params]
 
