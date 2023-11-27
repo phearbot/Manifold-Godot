@@ -87,9 +87,6 @@ func _physics_process(delta):
 		target_transform = align_with_y(global_transform, target_normal)
 		is_rotating = true
 		rotating_timer = 0
-		
-		
-		print("Default Gravity Vector: ", ProjectSettings.get_setting("physics/3d/default_gravity_vector"))
 
 	move_and_slide()
 

@@ -13,11 +13,14 @@ axis_lock_angular_z = true
 script = ExtResource("1_rh0q2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 shape = SubResource("CapsuleShape3D_3ao2b")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 mesh = SubResource("CapsuleMesh_k7l8q")
 
 [node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.5, 2.08165e-12)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
