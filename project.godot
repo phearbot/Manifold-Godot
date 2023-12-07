@@ -12,15 +12,22 @@ config_version=5
 
 config/name="Manifold-Godot"
 run/main_scene="res://scenes/test.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://graphics/sprites/icon.svg"
+
+[audio]
+
+driver/mix_rate.web=44100
+
+[debug]
+
+settings/stdout/print_fps=true
 
 [display]
 
-window/size/viewport_width=3840
-window/size/viewport_height=2160
-window/size/initial_position_type=3
-window/size/initial_screen=2
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/initial_position_type=0
 
 [input]
 
@@ -65,3 +72,8 @@ interact={
 [physics]
 
 common/physics_ticks_per_second=144
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+anti_aliasing/quality/screen_space_aa=1

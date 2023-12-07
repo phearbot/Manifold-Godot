@@ -27,8 +27,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var camera = $Head/Camera3D
 
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	#ProjectSettings.set_setting("physics/3d/default_gravity_vector", Vector3(1,1,1))
+	pass
 
 
 func _unhandled_input(event):
@@ -36,6 +37,9 @@ func _unhandled_input(event):
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+		
+	if event is InputEventMouseButton:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -75,10 +79,11 @@ func _physics_process(delta):
 	var proposed_velocity = direction * SPEED + gravity_to_apply
 	velocity = proposed_velocity
 
-	
+	# Clicking switches the gravity to the inverse of the normal you click (The surface you clicked is now "the ground")
 	# Checks for input, null values, and the last guy makes sure you aren't clicking the floor
 	if (Input.is_action_just_pressed("interact") && target_normal != null && not global_transform.basis.y.is_equal_approx(target_normal)):
 		# Sets project gravity vector and game controller up direction
+
 		ProjectSettings.set_setting("physics/3d/default_gravity_vector", -target_normal)	
 		up_direction = target_normal
 		
@@ -92,7 +97,8 @@ func _physics_process(delta):
 
 
 func _process(delta):
-	# Clicking switches the gravity to the inverse of the normal you click (The surface you clicked is now "the ground")
+
+	#print(DisplayServer.window_get_size()) 
 
 	# Raycast for detecting normals
 	var cam = $Head/Camera3D
